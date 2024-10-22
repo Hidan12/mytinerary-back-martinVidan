@@ -16,7 +16,7 @@ Mytinerary-Back is a backend service for managing city information. It provides 
 #### Example Request
 ```http
 GET http://localhost:8080/api/city/allCity
-
+```
 #### Example Response
 ```json
 {
@@ -32,11 +32,11 @@ GET http://localhost:8080/api/city/allCity
     // more cities
   ]
 }
-
+```
 #### Example Response with Query
 ```http
 GET http://localhost:8080/api/city/allCity?search=Paris
-
+```
 ```json
 {
   "length": 1,
@@ -50,7 +50,7 @@ GET http://localhost:8080/api/city/allCity?search=Paris
     }
   ]
 }
-
+```
 ### 2. Get City by ID
 - **URL:** `http://localhost:8080/api/city/cityById/:id`
 - **Method:** GET
@@ -61,7 +61,7 @@ GET http://localhost:8080/api/city/allCity?search=Paris
 #### Example Request
 ```http
 GET http://localhost:8080/api/city/cityById/1
-
+```
 ```json
 {
   "city": {
@@ -72,7 +72,7 @@ GET http://localhost:8080/api/city/cityById/1
     "description": "The capital city of France."
   }
 }
-
+```
 ### 3. Create a City
 - **URL:** `http://localhost:8080/api/city/createdCity`
 - **Method:** POST
@@ -87,6 +87,8 @@ GET http://localhost:8080/api/city/cityById/1
 #### Example Request
 ```http
 POST http://localhost:8080/api/city/createdCity
+```
+```json
 Content-Type: application/json
 
 {
@@ -96,21 +98,21 @@ Content-Type: application/json
   "currencyCoin": "USD",
   "description": "The largest city in the United States."
 }
-
+```
 ## Installation
 
 1. Clone the repository:
    ```sh
    git clone https://github.com/yourusername/mytinerary-back.git
-
+    ```
 2. Navigate to the project directory:
    ```sh
    cd mytinerary-back-martinVidan
-
+    ```
 3. Install the dependencies:
    ```sh
     npm install
-
+    ```
 ## Configuration
 
 You need to create a `.env` file in the root directory of the project to store environment variables.
