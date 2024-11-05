@@ -17,7 +17,7 @@ const updatedLike = async (req,res,next) =>{
 const updateItinerary = async (req, res, next) =>{
     try {
         const newUpdate = await Itinerary.findOneAndUpdate(
-            req.body._id,
+            {_id: req.body._id},
             req.body,
             {new:true}
         )
