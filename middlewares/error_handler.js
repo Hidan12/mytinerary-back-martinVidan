@@ -1,4 +1,4 @@
-const error_handler = (error, req, res)=>{
+const error_handler = (req, res)=>{
     return res.status(500).json({
         error:error
     })
