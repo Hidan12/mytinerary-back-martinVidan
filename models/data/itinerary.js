@@ -345,7 +345,40 @@ const itineraries = [
   }
 ]
 
+let usuarios = [
+  "673ce64d1e64015bbcaa70a9",
+  "673ce64d1e64015bbcaa70aa",
+  "673ce64d1e64015bbcaa70ab",
+  "673ce64d1e64015bbcaa70ac",
+  "673ce64d1e64015bbcaa70ad"
+]
+const itinerariesUpdated = itineraries.map(({ photoUser, nameUser, ...itinerary }) => itinerary);
+// Función para asignar al menos 6 itinerarios a cada usuario
+function asignarItinerariosAUsuarios(itinerarios, usuarios) {
+  // Creamos un objeto para llevar la cuenta de los itinerarios por usuario
+  let itinerariosPorUsuario = {};
+  
+  // Inicializamos el objeto con los usuarios vacíos
+  usuarios.forEach(user => {
+    itinerariosPorUsuario[user] = 0;
+  });
 
+  // Recorremos el array de itinerarios y asignamos un usuario a cada uno
+  itinerarios.forEach(itinerario => {
+    // Buscamos al primer usuario que tenga menos de 6 itinerarios asignados
+    let usuarioAsignado = usuarios.find(user => itinerariosPorUsuario[user] < 6);
+    
+    if (usuarioAsignado) {
+      itinerario.user = usuarioAsignado;  // Asignamos el usuario al itinerario
+      itinerariosPorUsuario[usuarioAsignado] += 1;  // Incrementamos el contador de itinerarios para ese usuario
+    }
+  });
 
-Itinerary.insertMany(itineraries)
+  return itinerarios;
+}
+
+// Llamada a la función para agregar el campo 'user'
+let itinerariosConUsuarios = asignarItinerariosAUsuarios(itinerariesUpdated, usuarios);
+
+Itinerary.insertMany(itinerariosConUsuarios)
 
