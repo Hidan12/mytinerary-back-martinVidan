@@ -1,7 +1,9 @@
-import { ERROR_ALPHANUM, ERROR_BOOLEAN, ERROR_EMAIL, ERROR_EMPTY, ERROR_FORMAT_ID, ERROR_MIN, ERROR_NUMBER, ERROR_REQUIRED, ERROR_STRING, ERROR_URL } from "../../utils/msg-Joi"
+import joi from "joi-oid"
+
+import { ERROR_ALPHANUM, ERROR_BOOLEAN, ERROR_EMAIL, ERROR_EMPTY, ERROR_FORMAT_ID, ERROR_MIN, ERROR_NUMBER, ERROR_REQUIRED, ERROR_STRING, ERROR_URL } from "../../utils/msg-Joi.js"
 
 const schema = joi.object({
-    _id: joi.objectId().required().alphanum().messages({
+    _id: joi.objectId().required().messages({
         'string.pattern.name': ERROR_FORMAT_ID,
         'any.required': ERROR_REQUIRED,
         'string.alphanum': ERROR_ALPHANUM
@@ -10,6 +12,9 @@ const schema = joi.object({
       'string.base': ERROR_STRING,
       'string.empty': ERROR_EMPTY,
       'string.alphanum': ERROR_ALPHANUM
+    }),
+    google: joi.boolean().messages({
+      'boolean.base': ERROR_BOOLEAN
     }),
     lastName: joi.string().messages({
       'string.base': ERROR_STRING,

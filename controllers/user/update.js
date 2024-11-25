@@ -3,6 +3,31 @@ import Itinerary from "../../models/Itinerary.js"
 import { encryption } from "../../utils/encryption.js";
 
 
+
+
+const updateUser = async (req, res, next)=>{
+  try {
+    const {_id, ...updateBody} = req.body
+    console.log(_id, updateBody);
+    
+    
+    const update = await User.findOneAndUpdate(
+      {_id: _id},
+      updateBody,
+      {new:true}
+    )
+    return res.status(201).json({
+      success: true,
+      user: update
+      })
+  } catch (error) {
+    console.log(error);
+    
+    return next(error)
+  }
+}
+
+
 const updateUserItinerary = async (req, res, next) => {
   try {
     const itineraries = await Itinerary.find();
@@ -41,5 +66,5 @@ const updatePassword = async (req, res, next)=>{
   }
 }
 
-export {updateUserItinerary, updatePassword};
+export {updateUser, updateUserItinerary, updatePassword};
 

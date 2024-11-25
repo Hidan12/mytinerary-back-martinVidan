@@ -1,4 +1,5 @@
 const error_400 = (error, req, res, next)=>{
+    
     if (error.statusCode) {
         return res.status(error.statusCode).json({
             success: false,
@@ -14,7 +15,7 @@ const error_400 = (error, req, res, next)=>{
                 msg: `Error ${errorArray} is required`
             })
         }
-        next(error)
+        return next(error)
     }
     
 }

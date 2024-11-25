@@ -14,6 +14,7 @@ const allUser = async (req, res, next) =>{
         next(e)
     }
 }
+
 const verifyToken = (req, res, next)=>{
     res.status(201).json({
         success: true,

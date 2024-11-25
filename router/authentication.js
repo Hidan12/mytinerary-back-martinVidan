@@ -17,7 +17,9 @@ router.get("/signin/google", passportGoogle.authenticate('google',{scope: ["prof
 
 router.get("/signin/google/callback", passportGoogle.authenticate('google',{session:false, failureRedirect:"/"}), generateToken, sigInGoogle)
 
+
 router.get("/checkToken", passport.authenticate('jwt',{session:false}), verifyToken)
+
 
 router.get("/signOut", passport.authenticate('jwt',{session:false}), signOut)
 

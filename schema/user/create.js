@@ -14,6 +14,9 @@ const schema = joi.object({
       'string.alphanum': ERROR_ALPHANUM,
       'any.required': ERROR_REQUIRED
     }),
+    google: joi.boolean().messages({
+      'boolean.base': ERROR_BOOLEAN
+    }),
     Country: joi.string().required().messages({
       'string.base': ERROR_STRING,
       'string.empty': ERROR_EMPTY,
