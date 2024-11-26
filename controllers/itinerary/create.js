@@ -12,15 +12,6 @@ const createItinerary = async (req, res, next) =>{
 }
 
 
-const createManyItinerary = async (req, res, next) =>{
-    try {
-        const itineraries = await Itinerary.insertMany(req.body)
-        res.status(201).json({
-            itineraries:itineraries
-        })
-    } catch (error) {
-        next(error)
-    }
-}
 
-export {createItinerary, createManyItinerary}
+
+export {createItinerary}

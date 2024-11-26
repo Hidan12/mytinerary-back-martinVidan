@@ -5,7 +5,6 @@ import "../../models/City.js"
 const allItinerary = async (req,res,next) =>{
     try {
         const itineraries = await Itinerary.find().populate("city", "cityName").populate("user", "name lastName photo").exec()
-
         return res.status(200).json({
             length: itineraries.length,
             Itineraries: itineraries

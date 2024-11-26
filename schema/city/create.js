@@ -1,5 +1,5 @@
 import joi from "joi-oid";
-import { ERROR_EMPTY, ERROR_REQUIRED, ERROR_STRING } from "../../utils/msg-Joi";
+import { ERROR_EMPTY, ERROR_REQUIRED, ERROR_STRING, ERROR_URL } from "../../utils/msg-Joi.js";
 const schema = joi.object({
     cityName: joi.string().required().messages({
       'string.base': ERROR_STRING,

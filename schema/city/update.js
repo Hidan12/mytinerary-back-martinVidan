@@ -1,5 +1,5 @@
-import joi from "joi-oid'";
-import { ERROR_EMPTY, ERROR_FORMAT_ID, ERROR_REQUIRED, ERROR_STRING } from "../../utils/msg-Joi";
+import joi from "joi-oid"
+import { ERROR_EMPTY, ERROR_FORMAT_ID, ERROR_REQUIRED, ERROR_STRING, ERROR_URL } from "../../utils/msg-Joi.js";
 
 const schema = joi.object({
     _id: joi.objectId().required().messages({

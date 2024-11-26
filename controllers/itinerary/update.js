@@ -1,18 +1,5 @@
 import Itinerary from "../../models/Itinerary.js"
 
-const updatedLike = async (req,res,next) =>{
-    try {
-        const update = await Itinerary.updateOne(
-            {_id: req.body._id},
-            {likes: req.body.likes}
-        )
-        return res.status(201).json({
-            response: update
-        })
-    } catch (error) {
-        next(error)
-    }
-}
 
 const updateItinerary = async (req, res, next) =>{
     try {
@@ -29,4 +16,4 @@ const updateItinerary = async (req, res, next) =>{
     }
 }
 
-export {updatedLike, updateItinerary}
+export {updateItinerary}
