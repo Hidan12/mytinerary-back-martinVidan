@@ -39,6 +39,6 @@ const sigInGoogle = async(req, res, next)=>{
         }
         
     }
-    return res.redirect(`http://localhost:5173?token=${req.token}`)
+    return res.redirect(`https://mytinerary-martin-vidan.vercel.app/?token=${req.token}`)
 }
 export  {sigIn, sigInGoogle}
