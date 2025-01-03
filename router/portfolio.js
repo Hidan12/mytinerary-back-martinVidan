@@ -5,6 +5,6 @@ import schemaPortfolio from "../schema/portfolio/send.js"
 
 const router = Router()
 
-router.get("/sendMail", validator(schemaPortfolio), sendMailPortfilio)
+router.post("/sendMail", validator(schemaPortfolio), sendMailPortfilio)
 
 export default router
