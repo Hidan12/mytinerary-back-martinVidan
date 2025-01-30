@@ -22,7 +22,7 @@ export const welcomeEmail = ()=>{
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .header {
-            background-color: #2563eb;
+            background-color: #492153;
             color: #ffffff;
             text-align: center;
             padding: 20px;
@@ -37,7 +37,7 @@ export const welcomeEmail = ()=>{
             margin: 20px 0;
         }
         .button {
-            background-color: #2563eb;
+            background-color: #492153;
             color: #ffffff;
             padding: 10px 20px;
             text-decoration: none;
@@ -45,7 +45,7 @@ export const welcomeEmail = ()=>{
             font-size: 16px;
         }
         .button:hover {
-            background-color: #1e3a8a ;
+            background-color: #2A114B ;
         }
     </style>
 </head>
